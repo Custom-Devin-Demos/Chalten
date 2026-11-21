@@ -185,6 +185,9 @@ same expected strings and error messages. Any deviation goes to `DIFFERENCES.md`
 - `Instant` ↔ `TimeOffsetAwareGregorianDateTime` round-trip under fixed offsets and IANA zones (non-gap times).
 - `TimeQuantity` conversion round-trips are exact; `ISO8601Parser.parseDuration(format(q)) == q`.
 - `DiscreteInterval` size and ordering match stepping with `next`.
+- `GregorianYear.isLeapYear` agrees with `java.time.Year.isLeap`.
+
+Generators live in `org.chalten.testkit.ChaltenArbitraries` and weight year 0, negative years, century and 400-year boundaries, month starts and ends, leap days, fixed offsets over ±16 h and DST, half-hour and quarter-hour IANA zones. Conversions through Julian day numbers are generated from the year -4712 on and `dayOfWeek` from -4715 on, because the Smalltalk arithmetic is one day off before that and the port keeps it (`DIFFERENCES.md` S1). `DiscreteInterval` holds `Steppable` values (dates, years, quantities), so interval properties step with `plus`; IANA zone properties use `java.time.zone.ZoneRules` as an in-test `TimeOffsetRuleset` until U4's rulesets land.
 
 ## 7. Open decisions / follow-ups
 
@@ -194,7 +197,7 @@ same expected strings and error messages. Any deviation goes to `DIFFERENCES.md`
 
 ## 8. Test-parity matrix
 
-Status is `pending` until the owning unit lands; U5's checker keeps it honest.
+Status is `done` when the same-named JUnit method exists and is enabled, `pending` otherwise. `./gradlew check` (`checkTestParity`) fails if a non-pending class has a missing selector, if a Status disagrees with the code, or if this matrix drifts from `source/**/*Test*.st`; `./gradlew updateTestParityStatus` rewrites the Status column. Classes owned by U4 are listed in `java/test-parity-pending.txt` and reported without failing until U4 lands; the checker fails once a listed class is fully ported, so the entry must then be removed.
 
 | # | SUnit package | SUnit class | Tests | Java module | JUnit 5 class | Owner unit |
 | --- | --- | --- | --- | --- | --- | --- |

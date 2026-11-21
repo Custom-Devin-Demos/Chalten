@@ -55,3 +55,13 @@ tasks.named<JacocoReport>("jacocoTestReport") {
 tasks.named("check") {
     dependsOn(tasks.named("jacocoTestReport"))
 }
+
+// The compiled JUnit classes, for the root project's SUnit → JUnit test-parity check.
+configurations.consumable("testParityClassesElements") {
+    attributes {
+        attribute(Usage.USAGE_ATTRIBUTE, objects.named("chalten-test-parity-classes"))
+    }
+    outgoing.artifact(tasks.named<JavaCompile>("compileTestJava").flatMap { it.destinationDirectory }) {
+        type = ArtifactTypeDefinition.DIRECTORY_TYPE
+    }
+}

@@ -1,0 +1,4 @@
+# SUnit test classes that may still lack JUnit counterparts (read by the test-parity checker, see PLAN.md §8).
+#
+# The checker reports missing selectors of listed classes without failing, and fails if a listed class becomes
+# fully ported. Format: one SUnit class key per line, as in PLAN.md §8. Every SUnit class is ported, so the list is empty.
