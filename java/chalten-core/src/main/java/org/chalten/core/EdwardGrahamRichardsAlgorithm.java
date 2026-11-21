@@ -1,6 +1,5 @@
 package org.chalten.core;
 
-import java.math.RoundingMode;
 import org.chalten.measure.Fraction;
 
 /**
@@ -43,7 +42,7 @@ public final class EdwardGrahamRichardsAlgorithm {
 
     /** Smalltalk {@code Number>>rounded}: half away from zero. */
     static long rounded(Fraction number) {
-        return number.toBigDecimalExact().setScale(0, RoundingMode.HALF_UP).toBigIntegerExact().longValueExact();
+        return number.plus(Fraction.of(number.signum(), 2)).truncated().longValueExact();
     }
 
     long normalize(Fraction julianDayNumber) {
