@@ -3,6 +3,9 @@ package org.chalten.core;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.Year;
+import java.util.function.Consumer;
+import org.chalten.localization.FormatterOptions;
+import org.chalten.localization.LocalizedChronologyFormatter;
 import org.chalten.localization.Translations;
 import org.chalten.measure.Fraction;
 import org.chalten.measure.InstanceCreationFailedException;
@@ -203,5 +206,15 @@ public final class GregorianYear implements CalendarYear<GregorianYear, Gregoria
     @Override
     public String toString() {
         return Long.toString(number);
+    }
+
+    /** Smalltalk {@code localized}: formatted in the medium style of {@link org.chalten.localization.CurrentLocale}. */
+    public String localized() {
+        return LocalizedChronologyFormatter.localized(this, options -> { });
+    }
+
+    /** Smalltalk {@code localizedWith:}: formatted in the style {@code configurer} chooses. */
+    public String localized(Consumer<FormatterOptions> configurer) {
+        return LocalizedChronologyFormatter.localized(this, configurer);
     }
 }

@@ -4,7 +4,10 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.function.Function;
+import org.chalten.localization.FormatterOptions;
+import org.chalten.localization.LocalizedChronologyFormatter;
 import org.chalten.measure.Fraction;
 import org.chalten.measure.TimeQuantity;
 import org.chalten.measure.TimeUnits;
@@ -116,5 +119,15 @@ public final class TimeOffsetAwareGregorianDateTime implements AbsolutePointInTi
         printTimeOfDayOn(stream);
         ruleset.get().printOffset(appliedOffset, stream);
         return stream.toString();
+    }
+
+    /** Smalltalk {@code localized}: formatted in the medium style of {@link org.chalten.localization.CurrentLocale}. */
+    public String localized() {
+        return LocalizedChronologyFormatter.localized(this, options -> { });
+    }
+
+    /** Smalltalk {@code localizedWith:}: formatted in the style {@code configurer} chooses. */
+    public String localized(Consumer<FormatterOptions> configurer) {
+        return LocalizedChronologyFormatter.localized(this, configurer);
     }
 }

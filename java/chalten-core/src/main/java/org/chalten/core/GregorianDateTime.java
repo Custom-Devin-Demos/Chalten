@@ -2,6 +2,9 @@ package org.chalten.core;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.function.Consumer;
+import org.chalten.localization.FormatterOptions;
+import org.chalten.localization.LocalizedChronologyFormatter;
 import org.chalten.measure.Fraction;
 import org.chalten.measure.TimeUnits;
 
@@ -115,5 +118,15 @@ public final class GregorianDateTime implements CalendarDateTime<GregorianDateTi
     @Override
     public String toString() {
         return date + " at " + timeOfDay;
+    }
+
+    /** Smalltalk {@code localized}: formatted in the medium style of {@link org.chalten.localization.CurrentLocale}. */
+    public String localized() {
+        return LocalizedChronologyFormatter.localized(this, options -> { });
+    }
+
+    /** Smalltalk {@code localizedWith:}: formatted in the style {@code configurer} chooses. */
+    public String localized(Consumer<FormatterOptions> configurer) {
+        return LocalizedChronologyFormatter.localized(this, configurer);
     }
 }
