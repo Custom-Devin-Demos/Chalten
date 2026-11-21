@@ -483,19 +483,19 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testCannotFormatEmptyMixedDuration` | `testCannotFormatEmptyMixedDuration()` | pending |
-| `testCannotFormatInvalidFractions` | `testCannotFormatInvalidFractions()` | pending |
-| `testCannotFormatMixedDurationWithRepeatedUnits` | `testCannotFormatMixedDurationWithRepeatedUnits()` | pending |
-| `testCannotFormatMixedDurationWithWeeks` | `testCannotFormatMixedDurationWithWeeks()` | pending |
-| `testCannotFormatUnsupportedUnits` | `testCannotFormatUnsupportedUnits()` | pending |
-| `testFormatDayDuration` | `testFormatDayDuration()` | pending |
-| `testFormatHourDuration` | `testFormatHourDuration()` | pending |
-| `testFormatMinuteDuration` | `testFormatMinuteDuration()` | pending |
-| `testFormatMixedDuration` | `testFormatMixedDuration()` | pending |
-| `testFormatMonthDuration` | `testFormatMonthDuration()` | pending |
-| `testFormatSecondDuration` | `testFormatSecondDuration()` | pending |
-| `testFormatWeekDuration` | `testFormatWeekDuration()` | pending |
-| `testFormatYearDuration` | `testFormatYearDuration()` | pending |
+| `testCannotFormatEmptyMixedDuration` | `testCannotFormatEmptyMixedDuration()` | done |
+| `testCannotFormatInvalidFractions` | `testCannotFormatInvalidFractions()` | done |
+| `testCannotFormatMixedDurationWithRepeatedUnits` | `testCannotFormatMixedDurationWithRepeatedUnits()` | done |
+| `testCannotFormatMixedDurationWithWeeks` | `testCannotFormatMixedDurationWithWeeks()` | done |
+| `testCannotFormatUnsupportedUnits` | `testCannotFormatUnsupportedUnits()` | done |
+| `testFormatDayDuration` | `testFormatDayDuration()` | done |
+| `testFormatHourDuration` | `testFormatHourDuration()` | done |
+| `testFormatMinuteDuration` | `testFormatMinuteDuration()` | done |
+| `testFormatMixedDuration` | `testFormatMixedDuration()` | done |
+| `testFormatMonthDuration` | `testFormatMonthDuration()` | done |
+| `testFormatSecondDuration` | `testFormatSecondDuration()` | done |
+| `testFormatWeekDuration` | `testFormatWeekDuration()` | done |
+| `testFormatYearDuration` | `testFormatYearDuration()` | done |
 
 </details>
 
@@ -579,9 +579,9 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAbsoluteUnits` | `testAbsoluteUnits()` | pending |
-| `testCommensurability` | `testCommensurability()` | pending |
-| `testRelativeUnits` | `testRelativeUnits()` | pending |
+| `testAbsoluteUnits` | `testAbsoluteUnits()` | done |
+| `testCommensurability` | `testCommensurability()` | done |
+| `testRelativeUnits` | `testRelativeUnits()` | done |
 
 </details>
 
