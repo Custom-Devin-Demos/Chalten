@@ -1,6 +1,9 @@
 package org.chalten.core;
 
 import java.time.LocalDate;
+import java.util.function.Consumer;
+import org.chalten.localization.FormatterOptions;
+import org.chalten.localization.LocalizedChronologyFormatter;
 import org.chalten.measure.Fraction;
 import org.chalten.measure.InstanceCreationFailedException;
 
@@ -111,5 +114,15 @@ public final class GregorianDate implements CalendarDate<GregorianDate, Gregoria
     @Override
     public String toString() {
         return month() + " " + dayNumber + ", " + year();
+    }
+
+    /** Smalltalk {@code localized}: formatted in the medium style of {@link org.chalten.localization.CurrentLocale}. */
+    public String localized() {
+        return LocalizedChronologyFormatter.localized(this, options -> { });
+    }
+
+    /** Smalltalk {@code localizedWith:}: formatted in the style {@code configurer} chooses. */
+    public String localized(Consumer<FormatterOptions> configurer) {
+        return LocalizedChronologyFormatter.localized(this, configurer);
     }
 }
