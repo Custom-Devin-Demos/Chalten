@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.chalten.core.CalendarDayOfMonth;
+import org.chalten.measure.ChaltenAssertionException;
 import org.chalten.measure.InstanceCreationFailedException;
 import org.junit.jupiter.api.Test;
 
@@ -128,5 +129,11 @@ class HebrewDayOfMonthTest extends HebrewCalendarTest {
     @Test
     void testPrintString() {
         assertEquals("Tishrei 1", tishrei.first().toString());
+    }
+
+    @Test
+    void testLocalizationIsNotSupported() {
+        assertEquals("Only days of Gregorian months can be localized",
+                assertThrows(ChaltenAssertionException.class, () -> tishrei.first().localized()).getMessage());
     }
 }
