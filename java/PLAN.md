@@ -53,6 +53,7 @@ Gradle (Kotlin DSL, wrapper committed), Java 21 toolchain, JUnit 5, jqwik, JaCoC
 ```text
 java/
   settings.gradle.kts, build.gradle.kts, gradle/libs.versions.toml, gradlew
+  build-logic/         chalten.java-library convention plugin (toolchain, JUnit 5, jqwik, JaCoCo)
   chalten-measure/     org.chalten.measure       Fraction, TimeUnit(s), TimeQuantity, DiscreteInterval, ISO8601DurationFormatter
   chalten-core/        org.chalten.core          Gregorian model, TimeOfDay, Instant, offsets, ISO8601Parser/Formatter
                        org.chalten.localization  ChronologyPattern, LocaleConventions, LocalizedChronologyFormatter
@@ -63,8 +64,10 @@ java/
   PLAN.md, MIGRATION.md, DIFFERENCES.md
 ```
 
-Module dependencies: `measure ← core ← {timezones, hebrew, islamic}`; `testkit` is `testImplementation` everywhere.
-`chalten-core` adds `../locales` as a resources dir (`processResources { from("../../locales") }`).
+Module dependencies: `measure ← core ← {timezones, hebrew, islamic}`; `testkit` (`api` on `core` and JUnit Jupiter,
+so its `ChaltenTest` can hold the Gregorian fixtures) is `testImplementation` everywhere.
+`chalten-core` packages the repo-root `locales/` in place as classpath resources under `locales/`
+(`processResources { from("../locales") { into("locales") } }`, path relative to `java/`), e.g. `/locales/chronology.json`.
 
 ## 3. Smalltalk idiom → Java mapping
 
