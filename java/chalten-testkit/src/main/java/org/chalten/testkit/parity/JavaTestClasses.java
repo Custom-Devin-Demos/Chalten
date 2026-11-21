@@ -59,7 +59,7 @@ public interface JavaTestClasses {
             Set<String> tests = new LinkedHashSet<>();
             Set<String> disabled = new LinkedHashSet<>();
             for (Method method : ReflectionSupport.findMethods(type,
-                    each -> each.getParameterCount() == 0 && !Modifier.isStatic(each.getModifiers())
+                    each -> !Modifier.isStatic(each.getModifiers())
                             && AnnotationSupport.isAnnotated(each, Testable.class),
                     HierarchyTraversalMode.TOP_DOWN)) {
                 tests.add(method.getName());

@@ -1,7 +1,10 @@
 package org.chalten.core;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 import java.util.function.Function;
+import org.chalten.localization.FormatterOptions;
+import org.chalten.localization.LocalizedChronologyFormatter;
 import org.chalten.measure.Fraction;
 import org.chalten.measure.TimeQuantity;
 import org.chalten.measure.TimeUnit;
@@ -172,5 +175,15 @@ public final class Instant implements AbsolutePointInTime {
         printYearMonthDateOn(stream);
         printTimeOfDayOn(stream);
         return stream.append('Z').toString();
+    }
+
+    /** Smalltalk {@code localized}: formatted in the medium style of {@link org.chalten.localization.CurrentLocale}. */
+    public String localized() {
+        return LocalizedChronologyFormatter.localized(this, options -> { });
+    }
+
+    /** Smalltalk {@code localizedWith:}: formatted in the style {@code configurer} chooses. */
+    public String localized(Consumer<FormatterOptions> configurer) {
+        return LocalizedChronologyFormatter.localized(this, configurer);
     }
 }

@@ -245,15 +245,15 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testChronologyCategory` | `testChronologyCategory()` | pending |
-| `testLaterLoadsOverridePropertyByProperty` | `testLaterLoadsOverridePropertyByProperty()` | pending |
-| `testLoadingFromAFile` | `testLoadingFromAFile()` | pending |
-| `testMarksAreNotPatterns` | `testMarksAreNotPatterns()` | pending |
-| `testPropertyNames` | `testPropertyNames()` | pending |
-| `testPropertyNotDefined` | `testPropertyNotDefined()` | pending |
-| `testPropertyResolvedFromTheMostSpecificRange` | `testPropertyResolvedFromTheMostSpecificRange()` | pending |
-| `testUnknownProperty` | `testUnknownProperty()` | pending |
-| `testUnsupportedFieldsAreRejectedBeforeLoading` | `testUnsupportedFieldsAreRejectedBeforeLoading()` | pending |
+| `testChronologyCategory` | `testChronologyCategory()` | done |
+| `testLaterLoadsOverridePropertyByProperty` | `testLaterLoadsOverridePropertyByProperty()` | done |
+| `testLoadingFromAFile` | `testLoadingFromAFile()` | done |
+| `testMarksAreNotPatterns` | `testMarksAreNotPatterns()` | done |
+| `testPropertyNames` | `testPropertyNames()` | done |
+| `testPropertyNotDefined` | `testPropertyNotDefined()` | done |
+| `testPropertyResolvedFromTheMostSpecificRange` | `testPropertyResolvedFromTheMostSpecificRange()` | done |
+| `testUnknownProperty` | `testUnknownProperty()` | done |
+| `testUnsupportedFieldsAreRejectedBeforeLoading` | `testUnsupportedFieldsAreRejectedBeforeLoading()` | done |
 
 </details>
 
@@ -261,24 +261,24 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testDay` | `testDay()` | pending |
-| `testDayOfWeek` | `testDayOfWeek()` | pending |
-| `testDayPeriod` | `testDayPeriod()` | pending |
-| `testEmptyPattern` | `testEmptyPattern()` | pending |
-| `testHour` | `testHour()` | pending |
-| `testLiterals` | `testLiterals()` | pending |
-| `testMinute` | `testMinute()` | pending |
-| `testMissingClosingQuote` | `testMissingClosingQuote()` | pending |
-| `testMonth` | `testMonth()` | pending |
-| `testNonASCIILettersAreLiteral` | `testNonASCIILettersAreLiteral()` | pending |
-| `testOffset` | `testOffset()` | pending |
-| `testPlaceholders` | `testPlaceholders()` | pending |
-| `testQuotedLiterals` | `testQuotedLiterals()` | pending |
-| `testReplacingDateAndTime` | `testReplacingDateAndTime()` | pending |
-| `testSecond` | `testSecond()` | pending |
-| `testUnsupportedFields` | `testUnsupportedFields()` | pending |
-| `testUnsupportedPlaceholders` | `testUnsupportedPlaceholders()` | pending |
-| `testYear` | `testYear()` | pending |
+| `testDay` | `testDay()` | done |
+| `testDayOfWeek` | `testDayOfWeek()` | done |
+| `testDayPeriod` | `testDayPeriod()` | done |
+| `testEmptyPattern` | `testEmptyPattern()` | done |
+| `testHour` | `testHour()` | done |
+| `testLiterals` | `testLiterals()` | done |
+| `testMinute` | `testMinute()` | done |
+| `testMissingClosingQuote` | `testMissingClosingQuote()` | done |
+| `testMonth` | `testMonth()` | done |
+| `testNonASCIILettersAreLiteral` | `testNonASCIILettersAreLiteral()` | done |
+| `testOffset` | `testOffset()` | done |
+| `testPlaceholders` | `testPlaceholders()` | done |
+| `testQuotedLiterals` | `testQuotedLiterals()` | done |
+| `testReplacingDateAndTime` | `testReplacingDateAndTime()` | done |
+| `testSecond` | `testSecond()` | done |
+| `testUnsupportedFields` | `testUnsupportedFields()` | done |
+| `testUnsupportedPlaceholders` | `testUnsupportedPlaceholders()` | done |
+| `testYear` | `testYear()` | done |
 
 </details>
 
@@ -389,24 +389,24 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testDateTimes` | `testDateTimes()` | pending |
-| `testDates` | `testDates()` | pending |
-| `testDatesPadTheirNumbers` | `testDatesPadTheirNumbers()` | pending |
-| `testDaysOfMonth` | `testDaysOfMonth()` | pending |
-| `testDaysOfWeek` | `testDaysOfWeek()` | pending |
-| `testFormattersUseTheirOwnLanguage` | `testFormattersUseTheirOwnLanguage()` | pending |
-| `testInstants` | `testInstants()` | pending |
-| `testInstantsAreShownOnTheirUTCDate` | `testInstantsAreShownOnTheirUTCDate()` | pending |
-| `testMidnightAndNoon` | `testMidnightAndNoon()` | pending |
-| `testMonths` | `testMonths()` | pending |
-| `testMonthsOfYear` | `testMonthsOfYear()` | pending |
-| `testOffsetAwareDateTimes` | `testOffsetAwareDateTimes()` | pending |
-| `testOffsets` | `testOffsets()` | pending |
-| `testPatternsNeedingPartsTheObjectDoesNotHave` | `testPatternsNeedingPartsTheObjectDoesNotHave()` | pending |
-| `testPlaceholdersOutsideCombiningPatterns` | `testPlaceholdersOutsideCombiningPatterns()` | pending |
-| `testSecondsAreShownWithoutTheirFraction` | `testSecondsAreShownWithoutTheirFraction()` | pending |
-| `testTimesOfDay` | `testTimesOfDay()` | pending |
-| `testYears` | `testYears()` | pending |
+| `testDateTimes` | `testDateTimes()` | done |
+| `testDates` | `testDates()` | done |
+| `testDatesPadTheirNumbers` | `testDatesPadTheirNumbers()` | done |
+| `testDaysOfMonth` | `testDaysOfMonth()` | done |
+| `testDaysOfWeek` | `testDaysOfWeek()` | done |
+| `testFormattersUseTheirOwnLanguage` | `testFormattersUseTheirOwnLanguage()` | done |
+| `testInstants` | `testInstants()` | done |
+| `testInstantsAreShownOnTheirUTCDate` | `testInstantsAreShownOnTheirUTCDate()` | done |
+| `testMidnightAndNoon` | `testMidnightAndNoon()` | done |
+| `testMonths` | `testMonths()` | done |
+| `testMonthsOfYear` | `testMonthsOfYear()` | done |
+| `testOffsetAwareDateTimes` | `testOffsetAwareDateTimes()` | done |
+| `testOffsets` | `testOffsets()` | done |
+| `testPatternsNeedingPartsTheObjectDoesNotHave` | `testPatternsNeedingPartsTheObjectDoesNotHave()` | done |
+| `testPlaceholdersOutsideCombiningPatterns` | `testPlaceholdersOutsideCombiningPatterns()` | done |
+| `testSecondsAreShownWithoutTheirFraction` | `testSecondsAreShownWithoutTheirFraction()` | done |
+| `testTimesOfDay` | `testTimesOfDay()` | done |
+| `testYears` | `testYears()` | done |
 
 </details>
 
@@ -539,11 +539,11 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testArgentinianSpanish` | `testArgentinianSpanish()` | pending |
-| `testBritishEnglish` | `testBritishEnglish()` | pending |
-| `testDefaults` | `testDefaults()` | pending |
-| `testEnglish` | `testEnglish()` | pending |
-| `testSpanish` | `testSpanish()` | pending |
+| `testArgentinianSpanish` | `testArgentinianSpanish()` | done |
+| `testBritishEnglish` | `testBritishEnglish()` | done |
+| `testDefaults` | `testDefaults()` | done |
+| `testEnglish` | `testEnglish()` | done |
+| `testSpanish` | `testSpanish()` | done |
 
 </details>
 
@@ -592,29 +592,29 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAccessing` | `testAccessing()` | pending |
-| `testBetweenAnd` | `testBetweenAnd()` | pending |
-| `testCannotComputeDateDistanceWhenTheSecondIsGreater` | `testCannotComputeDateDistanceWhenTheSecondIsGreater()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testDayOfWeek` | `testDayOfWeek()` | pending |
-| `testDaysBetweenTwoDates` | `testDaysBetweenTwoDates()` | pending |
-| `testGreaterThan` | `testGreaterThan()` | pending |
-| `testInstanceCreationFor29DaysMonth` | `testInstanceCreationFor29DaysMonth()` | pending |
-| `testInstanceCreationFor30DaysMonth` | `testInstanceCreationFor30DaysMonth()` | pending |
-| `testInstanceCreationForCheshvanOnCompleteYear` | `testInstanceCreationForCheshvanOnCompleteYear()` | pending |
-| `testInstanceCreationForCheshvanOnDeficientYear` | `testInstanceCreationForCheshvanOnDeficientYear()` | pending |
-| `testInstanceCreationForCheshvanOnRegularYear` | `testInstanceCreationForCheshvanOnRegularYear()` | pending |
-| `testInstanceCreationForKislevOnCompleteYear` | `testInstanceCreationForKislevOnCompleteYear()` | pending |
-| `testInstanceCreationForKislevOnDeficientYear` | `testInstanceCreationForKislevOnDeficientYear()` | pending |
-| `testInstanceCreationForKislevOnRegularYear` | `testInstanceCreationForKislevOnRegularYear()` | pending |
-| `testInterval` | `testInterval()` | pending |
-| `testIntervalWithStep` | `testIntervalWithStep()` | pending |
-| `testIsLastDayOfMonth` | `testIsLastDayOfMonth()` | pending |
-| `testLessThan` | `testLessThan()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testSubtraction` | `testSubtraction()` | pending |
+| `testAccessing` | `testAccessing()` | done |
+| `testBetweenAnd` | `testBetweenAnd()` | done |
+| `testCannotComputeDateDistanceWhenTheSecondIsGreater` | `testCannotComputeDateDistanceWhenTheSecondIsGreater()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testDayOfWeek` | `testDayOfWeek()` | done |
+| `testDaysBetweenTwoDates` | `testDaysBetweenTwoDates()` | done |
+| `testGreaterThan` | `testGreaterThan()` | done |
+| `testInstanceCreationFor29DaysMonth` | `testInstanceCreationFor29DaysMonth()` | done |
+| `testInstanceCreationFor30DaysMonth` | `testInstanceCreationFor30DaysMonth()` | done |
+| `testInstanceCreationForCheshvanOnCompleteYear` | `testInstanceCreationForCheshvanOnCompleteYear()` | done |
+| `testInstanceCreationForCheshvanOnDeficientYear` | `testInstanceCreationForCheshvanOnDeficientYear()` | done |
+| `testInstanceCreationForCheshvanOnRegularYear` | `testInstanceCreationForCheshvanOnRegularYear()` | done |
+| `testInstanceCreationForKislevOnCompleteYear` | `testInstanceCreationForKislevOnCompleteYear()` | done |
+| `testInstanceCreationForKislevOnDeficientYear` | `testInstanceCreationForKislevOnDeficientYear()` | done |
+| `testInstanceCreationForKislevOnRegularYear` | `testInstanceCreationForKislevOnRegularYear()` | done |
+| `testInterval` | `testInterval()` | done |
+| `testIntervalWithStep` | `testIntervalWithStep()` | done |
+| `testIsLastDayOfMonth` | `testIsLastDayOfMonth()` | done |
+| `testLessThan` | `testLessThan()` | done |
+| `testNext` | `testNext()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testSubtraction` | `testSubtraction()` | done |
 
 </details>
 
@@ -622,18 +622,18 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAccessing` | `testAccessing()` | pending |
-| `testAtMidnight` | `testAtMidnight()` | pending |
-| `testAtNoon` | `testAtNoon()` | pending |
-| `testAtStartOfDay` | `testAtStartOfDay()` | pending |
-| `testBetweenAnd` | `testBetweenAnd()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testCreationShortcut` | `testCreationShortcut()` | pending |
-| `testGreaterThan` | `testGreaterThan()` | pending |
-| `testIn` | `testIn()` | pending |
-| `testInCoordinatedUniversalTime` | `testInCoordinatedUniversalTime()` | pending |
-| `testLessThan` | `testLessThan()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
+| `testAccessing` | `testAccessing()` | done |
+| `testAtMidnight` | `testAtMidnight()` | done |
+| `testAtNoon` | `testAtNoon()` | done |
+| `testAtStartOfDay` | `testAtStartOfDay()` | done |
+| `testBetweenAnd` | `testBetweenAnd()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testCreationShortcut` | `testCreationShortcut()` | done |
+| `testGreaterThan` | `testGreaterThan()` | done |
+| `testIn` | `testIn()` | done |
+| `testInCoordinatedUniversalTime` | `testInCoordinatedUniversalTime()` | done |
+| `testLessThan` | `testLessThan()` | done |
+| `testPrintString` | `testPrintString()` | done |
 
 </details>
 
@@ -641,26 +641,26 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testComparing` | `testComparing()` | pending |
-| `testDateCreation` | `testDateCreation()` | pending |
-| `testInstanceCreation` | `testInstanceCreation()` | pending |
-| `testInstanceCreationShortcut` | `testInstanceCreationShortcut()` | pending |
-| `testInstanceCreationShortcutForAdar` | `testInstanceCreationShortcutForAdar()` | pending |
-| `testInstanceCreationShortcutForAdarI` | `testInstanceCreationShortcutForAdarI()` | pending |
-| `testInstanceCreationShortcutForAdarII` | `testInstanceCreationShortcutForAdarII()` | pending |
-| `testInstanceCreationShortcutForAv` | `testInstanceCreationShortcutForAv()` | pending |
-| `testInstanceCreationShortcutForCheshvan` | `testInstanceCreationShortcutForCheshvan()` | pending |
-| `testInstanceCreationShortcutForElul` | `testInstanceCreationShortcutForElul()` | pending |
-| `testInstanceCreationShortcutForIyar` | `testInstanceCreationShortcutForIyar()` | pending |
-| `testInstanceCreationShortcutForKislev` | `testInstanceCreationShortcutForKislev()` | pending |
-| `testInstanceCreationShortcutForNisan` | `testInstanceCreationShortcutForNisan()` | pending |
-| `testInstanceCreationShortcutForShevat` | `testInstanceCreationShortcutForShevat()` | pending |
-| `testInstanceCreationShortcutForSivan` | `testInstanceCreationShortcutForSivan()` | pending |
-| `testInstanceCreationShortcutForTammuz` | `testInstanceCreationShortcutForTammuz()` | pending |
-| `testInstanceCreationShortcutForTevet` | `testInstanceCreationShortcutForTevet()` | pending |
-| `testInstanceCreationShortcutForTishrei` | `testInstanceCreationShortcutForTishrei()` | pending |
-| `testLocalizationIsNotSupported` | `testLocalizationIsNotSupported()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
+| `testComparing` | `testComparing()` | done |
+| `testDateCreation` | `testDateCreation()` | done |
+| `testInstanceCreation` | `testInstanceCreation()` | done |
+| `testInstanceCreationShortcut` | `testInstanceCreationShortcut()` | done |
+| `testInstanceCreationShortcutForAdar` | `testInstanceCreationShortcutForAdar()` | done |
+| `testInstanceCreationShortcutForAdarI` | `testInstanceCreationShortcutForAdarI()` | done |
+| `testInstanceCreationShortcutForAdarII` | `testInstanceCreationShortcutForAdarII()` | done |
+| `testInstanceCreationShortcutForAv` | `testInstanceCreationShortcutForAv()` | done |
+| `testInstanceCreationShortcutForCheshvan` | `testInstanceCreationShortcutForCheshvan()` | done |
+| `testInstanceCreationShortcutForElul` | `testInstanceCreationShortcutForElul()` | done |
+| `testInstanceCreationShortcutForIyar` | `testInstanceCreationShortcutForIyar()` | done |
+| `testInstanceCreationShortcutForKislev` | `testInstanceCreationShortcutForKislev()` | done |
+| `testInstanceCreationShortcutForNisan` | `testInstanceCreationShortcutForNisan()` | done |
+| `testInstanceCreationShortcutForShevat` | `testInstanceCreationShortcutForShevat()` | done |
+| `testInstanceCreationShortcutForSivan` | `testInstanceCreationShortcutForSivan()` | done |
+| `testInstanceCreationShortcutForTammuz` | `testInstanceCreationShortcutForTammuz()` | done |
+| `testInstanceCreationShortcutForTevet` | `testInstanceCreationShortcutForTevet()` | done |
+| `testInstanceCreationShortcutForTishrei` | `testInstanceCreationShortcutForTishrei()` | done |
+| `testLocalizationIsNotSupported` | `testLocalizationIsNotSupported()` | done |
+| `testPrintString` | `testPrintString()` | done |
 
 </details>
 
@@ -668,16 +668,16 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAsHebrewDayOfWeek` | `testAsHebrewDayOfWeek()` | pending |
-| `testAsISODayOfWeek` | `testAsISODayOfWeek()` | pending |
-| `testInstanceCreation` | `testInstanceCreation()` | pending |
-| `testNames` | `testNames()` | pending |
-| `testNamesAreLocalized` | `testNamesAreLocalized()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testShortNames` | `testShortNames()` | pending |
-| `testShortNamesAreLocalized` | `testShortNamesAreLocalized()` | pending |
+| `testAsHebrewDayOfWeek` | `testAsHebrewDayOfWeek()` | done |
+| `testAsISODayOfWeek` | `testAsISODayOfWeek()` | done |
+| `testInstanceCreation` | `testInstanceCreation()` | done |
+| `testNames` | `testNames()` | done |
+| `testNamesAreLocalized` | `testNamesAreLocalized()` | done |
+| `testNext` | `testNext()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testShortNames` | `testShortNames()` | done |
+| `testShortNamesAreLocalized` | `testShortNamesAreLocalized()` | done |
 
 </details>
 
@@ -685,22 +685,22 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testBetweenAnd` | `testBetweenAnd()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testCreation` | `testCreation()` | pending |
-| `testCreationShortcut` | `testCreationShortcut()` | pending |
-| `testCreationShortcutOnLeapYear` | `testCreationShortcutOnLeapYear()` | pending |
-| `testGreaterThan` | `testGreaterThan()` | pending |
-| `testLessThan` | `testLessThan()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testNumberOfDaysOnCommonCompleteYear` | `testNumberOfDaysOnCommonCompleteYear()` | pending |
-| `testNumberOfDaysOnCommonDeficientYear` | `testNumberOfDaysOnCommonDeficientYear()` | pending |
-| `testNumberOfDaysOnCommonRegularYear` | `testNumberOfDaysOnCommonRegularYear()` | pending |
-| `testNumberOfDaysOnLeapCompleteYear` | `testNumberOfDaysOnLeapCompleteYear()` | pending |
-| `testNumberOfDaysOnLeapDeficientYear` | `testNumberOfDaysOnLeapDeficientYear()` | pending |
-| `testNumberOfDaysOnLeapRegularYear` | `testNumberOfDaysOnLeapRegularYear()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
+| `testBetweenAnd` | `testBetweenAnd()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testCreation` | `testCreation()` | done |
+| `testCreationShortcut` | `testCreationShortcut()` | done |
+| `testCreationShortcutOnLeapYear` | `testCreationShortcutOnLeapYear()` | done |
+| `testGreaterThan` | `testGreaterThan()` | done |
+| `testLessThan` | `testLessThan()` | done |
+| `testNext` | `testNext()` | done |
+| `testNumberOfDaysOnCommonCompleteYear` | `testNumberOfDaysOnCommonCompleteYear()` | done |
+| `testNumberOfDaysOnCommonDeficientYear` | `testNumberOfDaysOnCommonDeficientYear()` | done |
+| `testNumberOfDaysOnCommonRegularYear` | `testNumberOfDaysOnCommonRegularYear()` | done |
+| `testNumberOfDaysOnLeapCompleteYear` | `testNumberOfDaysOnLeapCompleteYear()` | done |
+| `testNumberOfDaysOnLeapDeficientYear` | `testNumberOfDaysOnLeapDeficientYear()` | done |
+| `testNumberOfDaysOnLeapRegularYear` | `testNumberOfDaysOnLeapRegularYear()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
 
 </details>
 
@@ -708,25 +708,25 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAdar` | `testAdar()` | pending |
-| `testAdarI` | `testAdarI()` | pending |
-| `testAdarII` | `testAdarII()` | pending |
-| `testAv` | `testAv()` | pending |
-| `testCheshvan` | `testCheshvan()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testElul` | `testElul()` | pending |
-| `testInstanceCreation` | `testInstanceCreation()` | pending |
-| `testIsGregorian` | `testIsGregorian()` | pending |
-| `testIyar` | `testIyar()` | pending |
-| `testKislev` | `testKislev()` | pending |
-| `testNamesAreLocalized` | `testNamesAreLocalized()` | pending |
-| `testNisan` | `testNisan()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testShevat` | `testShevat()` | pending |
-| `testSivan` | `testSivan()` | pending |
-| `testTammuz` | `testTammuz()` | pending |
-| `testTevet` | `testTevet()` | pending |
-| `testTishrei` | `testTishrei()` | pending |
+| `testAdar` | `testAdar()` | done |
+| `testAdarI` | `testAdarI()` | done |
+| `testAdarII` | `testAdarII()` | done |
+| `testAv` | `testAv()` | done |
+| `testCheshvan` | `testCheshvan()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testElul` | `testElul()` | done |
+| `testInstanceCreation` | `testInstanceCreation()` | done |
+| `testIsGregorian` | `testIsGregorian()` | done |
+| `testIyar` | `testIyar()` | done |
+| `testKislev` | `testKislev()` | done |
+| `testNamesAreLocalized` | `testNamesAreLocalized()` | done |
+| `testNisan` | `testNisan()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testShevat` | `testShevat()` | done |
+| `testSivan` | `testSivan()` | done |
+| `testTammuz` | `testTammuz()` | done |
+| `testTevet` | `testTevet()` | done |
+| `testTishrei` | `testTishrei()` | done |
 
 </details>
 
@@ -734,23 +734,23 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testBetweenAnd` | `testBetweenAnd()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testGreaterThan` | `testGreaterThan()` | pending |
-| `testInstanceCreation` | `testInstanceCreation()` | pending |
-| `testInstanceCreationShortcut` | `testInstanceCreationShortcut()` | pending |
-| `testInterval` | `testInterval()` | pending |
-| `testIsCompleteYear` | `testIsCompleteYear()` | pending |
-| `testIsDeficientYear` | `testIsDeficientYear()` | pending |
-| `testIsLeapYear` | `testIsLeapYear()` | pending |
-| `testIsRegularYear` | `testIsRegularYear()` | pending |
-| `testLessThan` | `testLessThan()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testNumberOfDays` | `testNumberOfDays()` | pending |
-| `testNumberOfMonths` | `testNumberOfMonths()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testYearsBetweenTwoYears` | `testYearsBetweenTwoYears()` | pending |
+| `testBetweenAnd` | `testBetweenAnd()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testGreaterThan` | `testGreaterThan()` | done |
+| `testInstanceCreation` | `testInstanceCreation()` | done |
+| `testInstanceCreationShortcut` | `testInstanceCreationShortcut()` | done |
+| `testInterval` | `testInterval()` | done |
+| `testIsCompleteYear` | `testIsCompleteYear()` | done |
+| `testIsDeficientYear` | `testIsDeficientYear()` | done |
+| `testIsLeapYear` | `testIsLeapYear()` | done |
+| `testIsRegularYear` | `testIsRegularYear()` | done |
+| `testLessThan` | `testLessThan()` | done |
+| `testNext` | `testNext()` | done |
+| `testNumberOfDays` | `testNumberOfDays()` | done |
+| `testNumberOfMonths` | `testNumberOfMonths()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testYearsBetweenTwoYears` | `testYearsBetweenTwoYears()` | done |
 
 </details>
 
@@ -758,25 +758,25 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAccessing` | `testAccessing()` | pending |
-| `testBetweenAnd` | `testBetweenAnd()` | pending |
-| `testCannotComputeDateDistanceWhenTheSecondIsGreater` | `testCannotComputeDateDistanceWhenTheSecondIsGreater()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testDayOfWeek` | `testDayOfWeek()` | pending |
-| `testDaysBetweenTwoDates` | `testDaysBetweenTwoDates()` | pending |
-| `testGreaterThan` | `testGreaterThan()` | pending |
-| `testInstanceCreationFor29DaysMonth` | `testInstanceCreationFor29DaysMonth()` | pending |
-| `testInstanceCreationFor30DaysMonth` | `testInstanceCreationFor30DaysMonth()` | pending |
-| `testInstanceCreationForDuAlhijjahOnCommonYear` | `testInstanceCreationForDuAlhijjahOnCommonYear()` | pending |
-| `testInstanceCreationForDuAlhijjahOnLeapYear` | `testInstanceCreationForDuAlhijjahOnLeapYear()` | pending |
-| `testInterval` | `testInterval()` | pending |
-| `testIntervalWithStep` | `testIntervalWithStep()` | pending |
-| `testIsLastDayOfMonth` | `testIsLastDayOfMonth()` | pending |
-| `testLessThan` | `testLessThan()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testSubtraction` | `testSubtraction()` | pending |
+| `testAccessing` | `testAccessing()` | done |
+| `testBetweenAnd` | `testBetweenAnd()` | done |
+| `testCannotComputeDateDistanceWhenTheSecondIsGreater` | `testCannotComputeDateDistanceWhenTheSecondIsGreater()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testDayOfWeek` | `testDayOfWeek()` | done |
+| `testDaysBetweenTwoDates` | `testDaysBetweenTwoDates()` | done |
+| `testGreaterThan` | `testGreaterThan()` | done |
+| `testInstanceCreationFor29DaysMonth` | `testInstanceCreationFor29DaysMonth()` | done |
+| `testInstanceCreationFor30DaysMonth` | `testInstanceCreationFor30DaysMonth()` | done |
+| `testInstanceCreationForDuAlhijjahOnCommonYear` | `testInstanceCreationForDuAlhijjahOnCommonYear()` | done |
+| `testInstanceCreationForDuAlhijjahOnLeapYear` | `testInstanceCreationForDuAlhijjahOnLeapYear()` | done |
+| `testInterval` | `testInterval()` | done |
+| `testIntervalWithStep` | `testIntervalWithStep()` | done |
+| `testIsLastDayOfMonth` | `testIsLastDayOfMonth()` | done |
+| `testLessThan` | `testLessThan()` | done |
+| `testNext` | `testNext()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testSubtraction` | `testSubtraction()` | done |
 
 </details>
 
@@ -784,18 +784,18 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAccessing` | `testAccessing()` | pending |
-| `testAtMidnight` | `testAtMidnight()` | pending |
-| `testAtNoon` | `testAtNoon()` | pending |
-| `testAtStartOfDay` | `testAtStartOfDay()` | pending |
-| `testBetweenAnd` | `testBetweenAnd()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testCreationShortcut` | `testCreationShortcut()` | pending |
-| `testGreaterThan` | `testGreaterThan()` | pending |
-| `testIn` | `testIn()` | pending |
-| `testInCoordinatedUniversalTime` | `testInCoordinatedUniversalTime()` | pending |
-| `testLessThan` | `testLessThan()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
+| `testAccessing` | `testAccessing()` | done |
+| `testAtMidnight` | `testAtMidnight()` | done |
+| `testAtNoon` | `testAtNoon()` | done |
+| `testAtStartOfDay` | `testAtStartOfDay()` | done |
+| `testBetweenAnd` | `testBetweenAnd()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testCreationShortcut` | `testCreationShortcut()` | done |
+| `testGreaterThan` | `testGreaterThan()` | done |
+| `testIn` | `testIn()` | done |
+| `testInCoordinatedUniversalTime` | `testInCoordinatedUniversalTime()` | done |
+| `testLessThan` | `testLessThan()` | done |
+| `testPrintString` | `testPrintString()` | done |
 
 </details>
 
@@ -803,24 +803,24 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testCannotCreateWithMonthOfAnotherCalendar` | `testCannotCreateWithMonthOfAnotherCalendar()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testDateCreation` | `testDateCreation()` | pending |
-| `testInstanceCreation` | `testInstanceCreation()` | pending |
-| `testInstanceCreationShortcut` | `testInstanceCreationShortcut()` | pending |
-| `testInstanceCreationShortcutForDuAlQiDah` | `testInstanceCreationShortcutForDuAlQiDah()` | pending |
-| `testInstanceCreationShortcutForDuAlQiHijjah` | `testInstanceCreationShortcutForDuAlQiHijjah()` | pending |
-| `testInstanceCreationShortcutForJumadaI` | `testInstanceCreationShortcutForJumadaI()` | pending |
-| `testInstanceCreationShortcutForJumadaII` | `testInstanceCreationShortcutForJumadaII()` | pending |
-| `testInstanceCreationShortcutForMuharram` | `testInstanceCreationShortcutForMuharram()` | pending |
-| `testInstanceCreationShortcutForRabiI` | `testInstanceCreationShortcutForRabiI()` | pending |
-| `testInstanceCreationShortcutForRabiII` | `testInstanceCreationShortcutForRabiII()` | pending |
-| `testInstanceCreationShortcutForRajab` | `testInstanceCreationShortcutForRajab()` | pending |
-| `testInstanceCreationShortcutForRamadan` | `testInstanceCreationShortcutForRamadan()` | pending |
-| `testInstanceCreationShortcutForSafar` | `testInstanceCreationShortcutForSafar()` | pending |
-| `testInstanceCreationShortcutForShaban` | `testInstanceCreationShortcutForShaban()` | pending |
-| `testInstanceCreationShortcutForShawwal` | `testInstanceCreationShortcutForShawwal()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
+| `testCannotCreateWithMonthOfAnotherCalendar` | `testCannotCreateWithMonthOfAnotherCalendar()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testDateCreation` | `testDateCreation()` | done |
+| `testInstanceCreation` | `testInstanceCreation()` | done |
+| `testInstanceCreationShortcut` | `testInstanceCreationShortcut()` | done |
+| `testInstanceCreationShortcutForDuAlQiDah` | `testInstanceCreationShortcutForDuAlQiDah()` | done |
+| `testInstanceCreationShortcutForDuAlQiHijjah` | `testInstanceCreationShortcutForDuAlQiHijjah()` | done |
+| `testInstanceCreationShortcutForJumadaI` | `testInstanceCreationShortcutForJumadaI()` | done |
+| `testInstanceCreationShortcutForJumadaII` | `testInstanceCreationShortcutForJumadaII()` | done |
+| `testInstanceCreationShortcutForMuharram` | `testInstanceCreationShortcutForMuharram()` | done |
+| `testInstanceCreationShortcutForRabiI` | `testInstanceCreationShortcutForRabiI()` | done |
+| `testInstanceCreationShortcutForRabiII` | `testInstanceCreationShortcutForRabiII()` | done |
+| `testInstanceCreationShortcutForRajab` | `testInstanceCreationShortcutForRajab()` | done |
+| `testInstanceCreationShortcutForRamadan` | `testInstanceCreationShortcutForRamadan()` | done |
+| `testInstanceCreationShortcutForSafar` | `testInstanceCreationShortcutForSafar()` | done |
+| `testInstanceCreationShortcutForShaban` | `testInstanceCreationShortcutForShaban()` | done |
+| `testInstanceCreationShortcutForShawwal` | `testInstanceCreationShortcutForShawwal()` | done |
+| `testPrintString` | `testPrintString()` | done |
 
 </details>
 
@@ -828,16 +828,16 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAsISODayOfWeek` | `testAsISODayOfWeek()` | pending |
-| `testAsIslamicDayOfWeek` | `testAsIslamicDayOfWeek()` | pending |
-| `testInstanceCreation` | `testInstanceCreation()` | pending |
-| `testNames` | `testNames()` | pending |
-| `testNamesAreLocalized` | `testNamesAreLocalized()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testShortNames` | `testShortNames()` | pending |
-| `testShortNamesAreLocalized` | `testShortNamesAreLocalized()` | pending |
+| `testAsISODayOfWeek` | `testAsISODayOfWeek()` | done |
+| `testAsIslamicDayOfWeek` | `testAsIslamicDayOfWeek()` | done |
+| `testInstanceCreation` | `testInstanceCreation()` | done |
+| `testNames` | `testNames()` | done |
+| `testNamesAreLocalized` | `testNamesAreLocalized()` | done |
+| `testNext` | `testNext()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testShortNames` | `testShortNames()` | done |
+| `testShortNamesAreLocalized` | `testShortNamesAreLocalized()` | done |
 
 </details>
 
@@ -845,17 +845,17 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testBetweenAnd` | `testBetweenAnd()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testCreation` | `testCreation()` | pending |
-| `testCreationShortcut` | `testCreationShortcut()` | pending |
-| `testDateCreation` | `testDateCreation()` | pending |
-| `testGreaterThan` | `testGreaterThan()` | pending |
-| `testLessThan` | `testLessThan()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testNumberOfDays` | `testNumberOfDays()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
+| `testBetweenAnd` | `testBetweenAnd()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testCreation` | `testCreation()` | done |
+| `testCreationShortcut` | `testCreationShortcut()` | done |
+| `testDateCreation` | `testDateCreation()` | done |
+| `testGreaterThan` | `testGreaterThan()` | done |
+| `testLessThan` | `testLessThan()` | done |
+| `testNext` | `testNext()` | done |
+| `testNumberOfDays` | `testNumberOfDays()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
 
 </details>
 
@@ -863,24 +863,24 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testComparing` | `testComparing()` | pending |
-| `testDuAlHijjah` | `testDuAlHijjah()` | pending |
-| `testDuAlQiDah` | `testDuAlQiDah()` | pending |
-| `testInstanceCreation` | `testInstanceCreation()` | pending |
-| `testJumadaAlAwwal` | `testJumadaAlAwwal()` | pending |
-| `testJumadaAlThani` | `testJumadaAlThani()` | pending |
-| `testMuharram` | `testMuharram()` | pending |
-| `testNamesAreLocalized` | `testNamesAreLocalized()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testRabiAlAwwal` | `testRabiAlAwwal()` | pending |
-| `testRabiAlThani` | `testRabiAlThani()` | pending |
-| `testRajab` | `testRajab()` | pending |
-| `testRamadan` | `testRamadan()` | pending |
-| `testSafar` | `testSafar()` | pending |
-| `testShaban` | `testShaban()` | pending |
-| `testShawwal` | `testShawwal()` | pending |
+| `testComparing` | `testComparing()` | done |
+| `testDuAlHijjah` | `testDuAlHijjah()` | done |
+| `testDuAlQiDah` | `testDuAlQiDah()` | done |
+| `testInstanceCreation` | `testInstanceCreation()` | done |
+| `testJumadaAlAwwal` | `testJumadaAlAwwal()` | done |
+| `testJumadaAlThani` | `testJumadaAlThani()` | done |
+| `testMuharram` | `testMuharram()` | done |
+| `testNamesAreLocalized` | `testNamesAreLocalized()` | done |
+| `testNext` | `testNext()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testRabiAlAwwal` | `testRabiAlAwwal()` | done |
+| `testRabiAlThani` | `testRabiAlThani()` | done |
+| `testRajab` | `testRajab()` | done |
+| `testRamadan` | `testRamadan()` | done |
+| `testSafar` | `testSafar()` | done |
+| `testShaban` | `testShaban()` | done |
+| `testShawwal` | `testShawwal()` | done |
 
 </details>
 
@@ -888,20 +888,20 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testBetweenAnd` | `testBetweenAnd()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testGreaterThan` | `testGreaterThan()` | pending |
-| `testInstanceCreation` | `testInstanceCreation()` | pending |
-| `testInstanceCreationShortcut` | `testInstanceCreationShortcut()` | pending |
-| `testInterval` | `testInterval()` | pending |
-| `testIsLeapYear` | `testIsLeapYear()` | pending |
-| `testLessThan` | `testLessThan()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testNumberOfDays` | `testNumberOfDays()` | pending |
-| `testNumberOfMonths` | `testNumberOfMonths()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testYearsBetweenTwoYears` | `testYearsBetweenTwoYears()` | pending |
+| `testBetweenAnd` | `testBetweenAnd()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testGreaterThan` | `testGreaterThan()` | done |
+| `testInstanceCreation` | `testInstanceCreation()` | done |
+| `testInstanceCreationShortcut` | `testInstanceCreationShortcut()` | done |
+| `testInterval` | `testInterval()` | done |
+| `testIsLeapYear` | `testIsLeapYear()` | done |
+| `testLessThan` | `testLessThan()` | done |
+| `testNext` | `testNext()` | done |
+| `testNumberOfDays` | `testNumberOfDays()` | done |
+| `testNumberOfMonths` | `testNumberOfMonths()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testYearsBetweenTwoYears` | `testYearsBetweenTwoYears()` | done |
 
 </details>
 
@@ -909,9 +909,9 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testInTimeZone` | `testInTimeZone()` | pending |
-| `testInTimeZoneWhenLocalTimeIsAmbiguous` | `testInTimeZoneWhenLocalTimeIsAmbiguous()` | pending |
-| `testInTimeZoneWhenLocalTimeIsSkipped` | `testInTimeZoneWhenLocalTimeIsSkipped()` | pending |
+| `testInTimeZone` | `testInTimeZone()` | done |
+| `testInTimeZoneWhenLocalTimeIsAmbiguous` | `testInTimeZoneWhenLocalTimeIsAmbiguous()` | done |
+| `testInTimeZoneWhenLocalTimeIsSkipped` | `testInTimeZoneWhenLocalTimeIsSkipped()` | done |
 
 </details>
 
@@ -919,12 +919,12 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAt` | `testAt()` | pending |
-| `testAtInvalidTimeZone` | `testAtInvalidTimeZone()` | pending |
-| `testOffsetToUniversalCoordinatedTimeAt` | `testOffsetToUniversalCoordinatedTimeAt()` | pending |
-| `testOffsetToUniversalCoordinatedTimeAtTransitionMoment` | `testOffsetToUniversalCoordinatedTimeAtTransitionMoment()` | pending |
-| `testOffsetToUniversalCoordinatedTimeBeforeFirstTransition` | `testOffsetToUniversalCoordinatedTimeBeforeFirstTransition()` | pending |
-| `testTimeZoneIdentifiers` | `testTimeZoneIdentifiers()` | pending |
+| `testAt` | `testAt()` | done |
+| `testAtInvalidTimeZone` | `testAtInvalidTimeZone()` | done |
+| `testOffsetToUniversalCoordinatedTimeAt` | `testOffsetToUniversalCoordinatedTimeAt()` | done |
+| `testOffsetToUniversalCoordinatedTimeAtTransitionMoment` | `testOffsetToUniversalCoordinatedTimeAtTransitionMoment()` | done |
+| `testOffsetToUniversalCoordinatedTimeBeforeFirstTransition` | `testOffsetToUniversalCoordinatedTimeBeforeFirstTransition()` | done |
+| `testTimeZoneIdentifiers` | `testTimeZoneIdentifiers()` | done |
 
 </details>
 
@@ -932,8 +932,8 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testInTimeZone` | `testInTimeZone()` | pending |
-| `testInTimeZoneWhenLocalTimeIsAmbiguous` | `testInTimeZoneWhenLocalTimeIsAmbiguous()` | pending |
+| `testInTimeZone` | `testInTimeZone()` | done |
+| `testInTimeZoneWhenLocalTimeIsAmbiguous` | `testInTimeZoneWhenLocalTimeIsAmbiguous()` | done |
 
 </details>
 
@@ -941,10 +941,10 @@ Status is `done` when the same-named JUnit method exists and is enabled, `pendin
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testCantCreateWithInvalidNumberOfTransitions` | `testCantCreateWithInvalidNumberOfTransitions()` | pending |
-| `testIdentifier` | `testIdentifier()` | pending |
-| `testOffsetToUniversalCoordinatedTimeAt` | `testOffsetToUniversalCoordinatedTimeAt()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
+| `testCantCreateWithInvalidNumberOfTransitions` | `testCantCreateWithInvalidNumberOfTransitions()` | done |
+| `testIdentifier` | `testIdentifier()` | done |
+| `testOffsetToUniversalCoordinatedTimeAt` | `testOffsetToUniversalCoordinatedTimeAt()` | done |
+| `testPrintString` | `testPrintString()` | done |
 
 </details>
 

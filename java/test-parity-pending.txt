@@ -1,35 +1,4 @@
 # SUnit test classes that may still lack JUnit counterparts (read by the test-parity checker, see PLAN.md §8).
 #
-# Every class below is owned by U4 (calendars, time zones, localization), which is being ported on a sibling
-# branch. The checker reports their missing selectors without failing; it fails if a listed class becomes fully
-# ported, so remove the line when U4 lands. Format: one SUnit class key per line, as in PLAN.md §8.
-
-# chalten-core, org.chalten.localization (U4)
-ChronologyConventionsTest
-ChronologyPatternTest
-GregorianLocalizationTest
-ShippedChronologyConventionsTest
-
-# chalten-hebrew (U4)
-HebrewDateTest
-HebrewDateTimeTest
-HebrewDayOfMonthTest
-HebrewDayOfWeekTest
-HebrewMonthOfYearTest
-HebrewMonthTest
-HebrewYearTest
-
-# chalten-islamic (U4)
-IslamicDateTest
-IslamicDateTimeTest
-IslamicDayOfMonthTest
-IslamicDayOfWeekTest
-IslamicMonthOfYearTest
-IslamicMonthTest
-IslamicYearTest
-
-# chalten-timezones (U4)
-GregorianDateTimeTest (extension)
-IANATimeZoneDatabaseTest
-TimeOffsetAwareGregorianDateTimeTest (extension)
-TimeZoneRulesetTest
+# The checker reports missing selectors of listed classes without failing, and fails if a listed class becomes
+# fully ported. Format: one SUnit class key per line, as in PLAN.md §8. Every SUnit class is ported, so the list is empty.

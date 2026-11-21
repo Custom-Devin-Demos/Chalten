@@ -1,5 +1,8 @@
 package org.chalten.core;
 
+import java.util.function.Consumer;
+import org.chalten.localization.FormatterOptions;
+import org.chalten.localization.LocalizedChronologyFormatter;
 import org.chalten.measure.TimeUnit;
 import org.chalten.measure.TimeUnits;
 
@@ -152,5 +155,15 @@ public interface CalendarMonth<D extends CalendarDate<D, ?, ?>> {
     /** @throws UnsupportedOperationException (Smalltalk {@code MessageNotUnderstood}) unless overridden */
     default CalendarDayOfMonth<D> thirtyFirst() {
         throw Smalltalk.doesNotUnderstand(this, "thirtyFirst");
+    }
+
+    /** Smalltalk {@code localized}: formatted in the medium style of {@link org.chalten.localization.CurrentLocale}. */
+    default String localized() {
+        return LocalizedChronologyFormatter.localized(this, options -> { });
+    }
+
+    /** Smalltalk {@code localizedWith:}: formatted in the style {@code configurer} chooses. */
+    default String localized(Consumer<FormatterOptions> configurer) {
+        return LocalizedChronologyFormatter.localized(this, configurer);
     }
 }
