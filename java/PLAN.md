@@ -119,30 +119,30 @@ so its `ChaltenTest` can hold the Gregorian fixtures) is `testImplementation` ev
 | Aconcagua `DiscreteInterval` | `DiscreteInterval<T>` | final class | measure | U3 |
 | `ISO8601DurationFormatter` | `ISO8601DurationFormatter` | final class | measure | U3 |
 | `Quantity` extensions (Aconcagua-Extensions) | `plus/minus(TimeQuantity)` overloads on dates/years | methods | core | U2 |
-| `CalendarMagnitude` | `CalendarMagnitude<T>` | sealed interface | core | U2 |
-| `CalendarDate` | `CalendarDate<D>` | sealed abstract class | core | U2 |
-| `CalendarDateTime` | `CalendarDateTime<D>` | sealed abstract class | core | U2 |
-| `CalendarYear` | `CalendarYear<Y>` | sealed abstract class | core | U2 |
-| `CalendarMonthOfYear` | `CalendarMonthOfYear<M>` | sealed abstract class | core | U2 |
-| `CalendarMonth` | `CalendarMonth` | sealed interface (enums implement) | core | U2 |
-| `CalendarDayOfWeek` | `CalendarDayOfWeek` | sealed interface (enums implement) | core | U2 |
-| `CalendarDayOfMonth` | `CalendarDayOfMonth` | record (interned) | core | U2 |
+| `CalendarMagnitude` | `CalendarMagnitude<T>` | interface (`Comparable` + default ordering methods) | core | U2 |
+| `CalendarDate` | `CalendarDate<D, M, Y>` | interface with default methods | core | U2 |
+| `CalendarDateTime` | `CalendarDateTime<T, D>` | interface with default methods | core | U2 |
+| `CalendarYear` | `CalendarYear<Y, M, D>` | interface with default methods | core | U2 |
+| `CalendarMonthOfYear` | `CalendarMonthOfYear<M, D, Y>` | interface with default methods | core | U2 |
+| `CalendarMonth` | `CalendarMonth<D>` | interface (enums implement) | core | U2 |
+| `CalendarDayOfWeek` | `CalendarDayOfWeek` | interface (enums implement) | core | U2 |
+| `CalendarDayOfMonth` | `CalendarDayOfMonth<D>` | record (value equality, not interned) | core | U2 |
 | `GregorianYear` | `GregorianYear` | final class | core | U2 |
 | `GregorianMonth` | `GregorianMonth` | enum | core | U2 |
-| `GregorianMonthOfYear` | `GregorianMonthOfYear` | record | core | U2 |
-| `GregorianDate` | `GregorianDate` | record | core | U2 |
-| `GregorianDateTime` | `GregorianDateTime` | record | core | U2 |
+| `GregorianMonthOfYear` | `GregorianMonthOfYear` | final class (value equality) | core | U2 |
+| `GregorianDate` | `GregorianDate` | final class (value equality) | core | U2 |
+| `GregorianDateTime` | `GregorianDateTime` | final class (value equality) | core | U2 |
 | `DayOfWeek` | `DayOfWeek` | enum | core | U2 |
-| `TimeOfDay` | `TimeOfDay` | record | core | U2 |
-| `EdwardGrahamRichardsAlgorithm` | `EdwardGrahamRichardsAlgorithm` | final class (package-private) | core | U2 |
+| `TimeOfDay` | `TimeOfDay` | final class (value equality) | core | U2 |
+| `EdwardGrahamRichardsAlgorithm` | `EdwardGrahamRichardsAlgorithm` | final class (singleton) | core | U2 |
 | `AbsolutePointInTime` | `AbsolutePointInTime` | sealed interface | core | U2 |
-| `Instant` | `Instant` | record (`long microsecondsSinceEpoch`) | core | U2 |
+| `Instant` | `Instant` | final class (exact `TimeQuantity` microseconds since the epoch) | core | U2 |
 | `TimeOffsetAwareGregorianDateTime` | `TimeOffsetAwareGregorianDateTime` | final class | core | U2 |
-| `TimeOffsetRuleset` | `TimeOffsetRuleset` | sealed interface (non-sealed for timezones module) | core | U2 |
-| `FixedOffsetRuleset` | `FixedOffsetRuleset` | record | core | U2 |
+| `TimeOffsetRuleset` | `TimeOffsetRuleset` | interface (open for the timezones module) | core | U2 |
+| `FixedOffsetRuleset` | `FixedOffsetRuleset` | final class (identity equality, as in Smalltalk) | core | U2 |
 | `ISO8601Parser` | `ISO8601Parser` | final class | core | U2 |
 | `ISO8601Formatter` | `ISO8601Formatter` | final class | core | U2 |
-| `Integer>>asGregorianYear`, `Object>>isAbsolutePointInTime` | `GregorianYear.of(int)`, `instanceof AbsolutePointInTime` | – | core | U2 |
+| `Integer>>asGregorianYear`, `Object>>isAbsolutePointInTime` | `GregorianYear.of(long)`, `AbsolutePointInTime.isAbsolutePointInTime(Object)` | – | core | U2 |
 | `ChronologyPattern` | `ChronologyPattern` | final class | core (`localization`) | U4 |
 | `LocalizedChronologyFormatter` | `LocalizedChronologyFormatter`, `FormatterOptions` | final classes | core (`localization`) | U4 |
 | `LocaleConventions` chronology extension (Buoy) | `LocaleConventions`, `CurrentLocale` | final classes | core (`localization`) | U4 |
@@ -283,15 +283,15 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testConverting` | `testConverting()` | pending |
-| `testInstanceCreation` | `testInstanceCreation()` | pending |
-| `testNames` | `testNames()` | pending |
-| `testNamesAreLocalized` | `testNamesAreLocalized()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testShortNames` | `testShortNames()` | pending |
-| `testShortNamesAreLocalized` | `testShortNamesAreLocalized()` | pending |
+| `testConverting` | `testConverting()` | done |
+| `testInstanceCreation` | `testInstanceCreation()` | done |
+| `testNames` | `testNames()` | done |
+| `testNamesAreLocalized` | `testNamesAreLocalized()` | done |
+| `testNext` | `testNext()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testShortNames` | `testShortNames()` | done |
+| `testShortNamesAreLocalized` | `testShortNamesAreLocalized()` | done |
 
 </details>
 
@@ -299,10 +299,10 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testCantCreateOutOfRange` | `testCantCreateOutOfRange()` | pending |
-| `testIdentifier` | `testIdentifier()` | pending |
-| `testOffsetToUniversalCoordinatedTimeAt` | `testOffsetToUniversalCoordinatedTimeAt()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
+| `testCantCreateOutOfRange` | `testCantCreateOutOfRange()` | done |
+| `testIdentifier` | `testIdentifier()` | done |
+| `testOffsetToUniversalCoordinatedTimeAt` | `testOffsetToUniversalCoordinatedTimeAt()` | done |
+| `testPrintString` | `testPrintString()` | done |
 
 </details>
 
@@ -310,27 +310,27 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAccessing` | `testAccessing()` | pending |
-| `testBetweenAnd` | `testBetweenAnd()` | pending |
-| `testCannotComputeDateDistanceWhenTheSecondIsGreater` | `testCannotComputeDateDistanceWhenTheSecondIsGreater()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testDayOfWeek` | `testDayOfWeek()` | pending |
-| `testDaysBetweenTwoDates` | `testDaysBetweenTwoDates()` | pending |
-| `testGreaterThan` | `testGreaterThan()` | pending |
-| `testISO8601Printing` | `testISO8601Printing()` | pending |
-| `testInstanceCreationFor30DaysMonth` | `testInstanceCreationFor30DaysMonth()` | pending |
-| `testInstanceCreationFor31DaysMonth` | `testInstanceCreationFor31DaysMonth()` | pending |
-| `testInstanceCreationForFebruaryOnCommonYear` | `testInstanceCreationForFebruaryOnCommonYear()` | pending |
-| `testInstanceCreationForFebruaryOnLeapYear` | `testInstanceCreationForFebruaryOnLeapYear()` | pending |
-| `testInterval` | `testInterval()` | pending |
-| `testIntervalWithStep` | `testIntervalWithStep()` | pending |
-| `testIsLastDayOfMonth` | `testIsLastDayOfMonth()` | pending |
-| `testLessThan` | `testLessThan()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testParseISO8601` | `testParseISO8601()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testSubtraction` | `testSubtraction()` | pending |
+| `testAccessing` | `testAccessing()` | done |
+| `testBetweenAnd` | `testBetweenAnd()` | done |
+| `testCannotComputeDateDistanceWhenTheSecondIsGreater` | `testCannotComputeDateDistanceWhenTheSecondIsGreater()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testDayOfWeek` | `testDayOfWeek()` | done |
+| `testDaysBetweenTwoDates` | `testDaysBetweenTwoDates()` | done |
+| `testGreaterThan` | `testGreaterThan()` | done |
+| `testISO8601Printing` | `testISO8601Printing()` | done |
+| `testInstanceCreationFor30DaysMonth` | `testInstanceCreationFor30DaysMonth()` | done |
+| `testInstanceCreationFor31DaysMonth` | `testInstanceCreationFor31DaysMonth()` | done |
+| `testInstanceCreationForFebruaryOnCommonYear` | `testInstanceCreationForFebruaryOnCommonYear()` | done |
+| `testInstanceCreationForFebruaryOnLeapYear` | `testInstanceCreationForFebruaryOnLeapYear()` | done |
+| `testInterval` | `testInterval()` | done |
+| `testIntervalWithStep` | `testIntervalWithStep()` | done |
+| `testIsLastDayOfMonth` | `testIsLastDayOfMonth()` | done |
+| `testLessThan` | `testLessThan()` | done |
+| `testNext` | `testNext()` | done |
+| `testParseISO8601` | `testParseISO8601()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testSubtraction` | `testSubtraction()` | done |
 
 </details>
 
@@ -338,23 +338,23 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAccessing` | `testAccessing()` | pending |
-| `testAtMidnight` | `testAtMidnight()` | pending |
-| `testAtNoon` | `testAtNoon()` | pending |
-| `testAtStartOfDay` | `testAtStartOfDay()` | pending |
-| `testBetweenAnd` | `testBetweenAnd()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testConverting` | `testConverting()` | pending |
-| `testCreationShortcut` | `testCreationShortcut()` | pending |
-| `testGreaterThan` | `testGreaterThan()` | pending |
-| `testISO8601Parsing` | `testISO8601Parsing()` | pending |
-| `testISO8601Printing` | `testISO8601Printing()` | pending |
-| `testIn` | `testIn()` | pending |
-| `testInCoordinatedUniversalTime` | `testInCoordinatedUniversalTime()` | pending |
-| `testJulianDayNumber` | `testJulianDayNumber()` | pending |
-| `testLessThan` | `testLessThan()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testPrintStringInISO8601` | `testPrintStringInISO8601()` | pending |
+| `testAccessing` | `testAccessing()` | done |
+| `testAtMidnight` | `testAtMidnight()` | done |
+| `testAtNoon` | `testAtNoon()` | done |
+| `testAtStartOfDay` | `testAtStartOfDay()` | done |
+| `testBetweenAnd` | `testBetweenAnd()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testConverting` | `testConverting()` | done |
+| `testCreationShortcut` | `testCreationShortcut()` | done |
+| `testGreaterThan` | `testGreaterThan()` | done |
+| `testISO8601Parsing` | `testISO8601Parsing()` | done |
+| `testISO8601Printing` | `testISO8601Printing()` | done |
+| `testIn` | `testIn()` | done |
+| `testInCoordinatedUniversalTime` | `testInCoordinatedUniversalTime()` | done |
+| `testJulianDayNumber` | `testJulianDayNumber()` | done |
+| `testLessThan` | `testLessThan()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testPrintStringInISO8601` | `testPrintStringInISO8601()` | done |
 
 </details>
 
@@ -362,23 +362,23 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testComparing` | `testComparing()` | pending |
-| `testDateCreation` | `testDateCreation()` | pending |
-| `testInstanceCreation` | `testInstanceCreation()` | pending |
-| `testInstanceCreationShortcut` | `testInstanceCreationShortcut()` | pending |
-| `testInstanceCreationShortcutForApril` | `testInstanceCreationShortcutForApril()` | pending |
-| `testInstanceCreationShortcutForAugust` | `testInstanceCreationShortcutForAugust()` | pending |
-| `testInstanceCreationShortcutForDecember` | `testInstanceCreationShortcutForDecember()` | pending |
-| `testInstanceCreationShortcutForFebruary` | `testInstanceCreationShortcutForFebruary()` | pending |
-| `testInstanceCreationShortcutForJanuary` | `testInstanceCreationShortcutForJanuary()` | pending |
-| `testInstanceCreationShortcutForJuly` | `testInstanceCreationShortcutForJuly()` | pending |
-| `testInstanceCreationShortcutForJune` | `testInstanceCreationShortcutForJune()` | pending |
-| `testInstanceCreationShortcutForMarch` | `testInstanceCreationShortcutForMarch()` | pending |
-| `testInstanceCreationShortcutForMay` | `testInstanceCreationShortcutForMay()` | pending |
-| `testInstanceCreationShortcutForNovember` | `testInstanceCreationShortcutForNovember()` | pending |
-| `testInstanceCreationShortcutForOctober` | `testInstanceCreationShortcutForOctober()` | pending |
-| `testInstanceCreationShortcutForSeptember` | `testInstanceCreationShortcutForSeptember()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
+| `testComparing` | `testComparing()` | done |
+| `testDateCreation` | `testDateCreation()` | done |
+| `testInstanceCreation` | `testInstanceCreation()` | done |
+| `testInstanceCreationShortcut` | `testInstanceCreationShortcut()` | done |
+| `testInstanceCreationShortcutForApril` | `testInstanceCreationShortcutForApril()` | done |
+| `testInstanceCreationShortcutForAugust` | `testInstanceCreationShortcutForAugust()` | done |
+| `testInstanceCreationShortcutForDecember` | `testInstanceCreationShortcutForDecember()` | done |
+| `testInstanceCreationShortcutForFebruary` | `testInstanceCreationShortcutForFebruary()` | done |
+| `testInstanceCreationShortcutForJanuary` | `testInstanceCreationShortcutForJanuary()` | done |
+| `testInstanceCreationShortcutForJuly` | `testInstanceCreationShortcutForJuly()` | done |
+| `testInstanceCreationShortcutForJune` | `testInstanceCreationShortcutForJune()` | done |
+| `testInstanceCreationShortcutForMarch` | `testInstanceCreationShortcutForMarch()` | done |
+| `testInstanceCreationShortcutForMay` | `testInstanceCreationShortcutForMay()` | done |
+| `testInstanceCreationShortcutForNovember` | `testInstanceCreationShortcutForNovember()` | done |
+| `testInstanceCreationShortcutForOctober` | `testInstanceCreationShortcutForOctober()` | done |
+| `testInstanceCreationShortcutForSeptember` | `testInstanceCreationShortcutForSeptember()` | done |
+| `testPrintString` | `testPrintString()` | done |
 
 </details>
 
@@ -411,20 +411,20 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testBetweenAnd` | `testBetweenAnd()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testCreation` | `testCreation()` | pending |
-| `testCreationShortcut` | `testCreationShortcut()` | pending |
-| `testDateCreation` | `testDateCreation()` | pending |
-| `testGreaterThan` | `testGreaterThan()` | pending |
-| `testISO8601Printing` | `testISO8601Printing()` | pending |
-| `testLessThan` | `testLessThan()` | pending |
-| `testMonthsBetweenTwoMonthsOfYear` | `testMonthsBetweenTwoMonthsOfYear()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testNumberOfDays` | `testNumberOfDays()` | pending |
-| `testParseISO8601` | `testParseISO8601()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
+| `testBetweenAnd` | `testBetweenAnd()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testCreation` | `testCreation()` | done |
+| `testCreationShortcut` | `testCreationShortcut()` | done |
+| `testDateCreation` | `testDateCreation()` | done |
+| `testGreaterThan` | `testGreaterThan()` | done |
+| `testISO8601Printing` | `testISO8601Printing()` | done |
+| `testLessThan` | `testLessThan()` | done |
+| `testMonthsBetweenTwoMonthsOfYear` | `testMonthsBetweenTwoMonthsOfYear()` | done |
+| `testNext` | `testNext()` | done |
+| `testNumberOfDays` | `testNumberOfDays()` | done |
+| `testParseISO8601` | `testParseISO8601()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
 
 </details>
 
@@ -432,26 +432,26 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testApril` | `testApril()` | pending |
-| `testAugust` | `testAugust()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testDecember` | `testDecember()` | pending |
-| `testFebruary` | `testFebruary()` | pending |
-| `testISO8601Printing` | `testISO8601Printing()` | pending |
-| `testInstanceCreation` | `testInstanceCreation()` | pending |
-| `testJanuary` | `testJanuary()` | pending |
-| `testJuly` | `testJuly()` | pending |
-| `testJune` | `testJune()` | pending |
-| `testMarch` | `testMarch()` | pending |
-| `testMay` | `testMay()` | pending |
-| `testNamesAreLocalized` | `testNamesAreLocalized()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testNovember` | `testNovember()` | pending |
-| `testOctober` | `testOctober()` | pending |
-| `testParseISO8601` | `testParseISO8601()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testSeptember` | `testSeptember()` | pending |
+| `testApril` | `testApril()` | done |
+| `testAugust` | `testAugust()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testDecember` | `testDecember()` | done |
+| `testFebruary` | `testFebruary()` | done |
+| `testISO8601Printing` | `testISO8601Printing()` | done |
+| `testInstanceCreation` | `testInstanceCreation()` | done |
+| `testJanuary` | `testJanuary()` | done |
+| `testJuly` | `testJuly()` | done |
+| `testJune` | `testJune()` | done |
+| `testMarch` | `testMarch()` | done |
+| `testMay` | `testMay()` | done |
+| `testNamesAreLocalized` | `testNamesAreLocalized()` | done |
+| `testNext` | `testNext()` | done |
+| `testNovember` | `testNovember()` | done |
+| `testOctober` | `testOctober()` | done |
+| `testParseISO8601` | `testParseISO8601()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testSeptember` | `testSeptember()` | done |
 
 </details>
 
@@ -459,23 +459,23 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testBetweenAnd` | `testBetweenAnd()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testGreaterThan` | `testGreaterThan()` | pending |
-| `testISO8601Printing` | `testISO8601Printing()` | pending |
-| `testInstanceCreation` | `testInstanceCreation()` | pending |
-| `testInstanceCreationShortcut` | `testInstanceCreationShortcut()` | pending |
-| `testInterval` | `testInterval()` | pending |
-| `testIntervalWithStep` | `testIntervalWithStep()` | pending |
-| `testIsLeapYear` | `testIsLeapYear()` | pending |
-| `testLessThan` | `testLessThan()` | pending |
-| `testNext` | `testNext()` | pending |
-| `testNumberOfDays` | `testNumberOfDays()` | pending |
-| `testNumberOfMonths` | `testNumberOfMonths()` | pending |
-| `testParseISO8601` | `testParseISO8601()` | pending |
-| `testPrevious` | `testPrevious()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testYearsBetweenTwoYears` | `testYearsBetweenTwoYears()` | pending |
+| `testBetweenAnd` | `testBetweenAnd()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testGreaterThan` | `testGreaterThan()` | done |
+| `testISO8601Printing` | `testISO8601Printing()` | done |
+| `testInstanceCreation` | `testInstanceCreation()` | done |
+| `testInstanceCreationShortcut` | `testInstanceCreationShortcut()` | done |
+| `testInterval` | `testInterval()` | done |
+| `testIntervalWithStep` | `testIntervalWithStep()` | done |
+| `testIsLeapYear` | `testIsLeapYear()` | done |
+| `testLessThan` | `testLessThan()` | done |
+| `testNext` | `testNext()` | done |
+| `testNumberOfDays` | `testNumberOfDays()` | done |
+| `testNumberOfMonths` | `testNumberOfMonths()` | done |
+| `testParseISO8601` | `testParseISO8601()` | done |
+| `testPrevious` | `testPrevious()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testYearsBetweenTwoYears` | `testYearsBetweenTwoYears()` | done |
 
 </details>
 
@@ -503,16 +503,16 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testCannotParseInvalidDuration` | `testCannotParseInvalidDuration()` | pending |
-| `testMixedTimePeriods` | `testMixedTimePeriods()` | pending |
-| `testParseDayDuration` | `testParseDayDuration()` | pending |
-| `testParseDurationUsingNonDefaultNumberReader` | `testParseDurationUsingNonDefaultNumberReader()` | pending |
-| `testParseHourDuration` | `testParseHourDuration()` | pending |
-| `testParseMinuteDuration` | `testParseMinuteDuration()` | pending |
-| `testParseMonthDuration` | `testParseMonthDuration()` | pending |
-| `testParseSecondDuration` | `testParseSecondDuration()` | pending |
-| `testParseWeekDuration` | `testParseWeekDuration()` | pending |
-| `testParseYearDuration` | `testParseYearDuration()` | pending |
+| `testCannotParseInvalidDuration` | `testCannotParseInvalidDuration()` | done |
+| `testMixedTimePeriods` | `testMixedTimePeriods()` | done |
+| `testParseDayDuration` | `testParseDayDuration()` | done |
+| `testParseDurationUsingNonDefaultNumberReader` | `testParseDurationUsingNonDefaultNumberReader()` | done |
+| `testParseHourDuration` | `testParseHourDuration()` | done |
+| `testParseMinuteDuration` | `testParseMinuteDuration()` | done |
+| `testParseMonthDuration` | `testParseMonthDuration()` | done |
+| `testParseSecondDuration` | `testParseSecondDuration()` | done |
+| `testParseWeekDuration` | `testParseWeekDuration()` | done |
+| `testParseYearDuration` | `testParseYearDuration()` | done |
 
 </details>
 
@@ -520,15 +520,15 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAccessing` | `testAccessing()` | pending |
-| `testAsUnixTime` | `testAsUnixTime()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testConverting` | `testConverting()` | pending |
-| `testFromJulianDayNumber` | `testFromJulianDayNumber()` | pending |
-| `testFromUnixTime` | `testFromUnixTime()` | pending |
-| `testJulianDayNumber` | `testJulianDayNumber()` | pending |
-| `testMagnitudeProtocol` | `testMagnitudeProtocol()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
+| `testAccessing` | `testAccessing()` | done |
+| `testAsUnixTime` | `testAsUnixTime()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testConverting` | `testConverting()` | done |
+| `testFromJulianDayNumber` | `testFromJulianDayNumber()` | done |
+| `testFromUnixTime` | `testFromUnixTime()` | done |
+| `testJulianDayNumber` | `testJulianDayNumber()` | done |
+| `testMagnitudeProtocol` | `testMagnitudeProtocol()` | done |
+| `testPrintString` | `testPrintString()` | done |
 
 </details>
 
@@ -548,18 +548,18 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAccessing` | `testAccessing()` | pending |
-| `testAddition` | `testAddition()` | pending |
-| `testAdditionCannotExceed24Hours` | `testAdditionCannotExceed24Hours()` | pending |
-| `testAdditionOfLessThanOneHour` | `testAdditionOfLessThanOneHour()` | pending |
-| `testComparing` | `testComparing()` | pending |
-| `testISO8601Printing` | `testISO8601Printing()` | pending |
-| `testInvalidCreation` | `testInvalidCreation()` | pending |
-| `testParseISO8601` | `testParseISO8601()` | pending |
-| `testPrintString` | `testPrintString()` | pending |
-| `testSubtraction` | `testSubtraction()` | pending |
-| `testSubtractionCannotExceed0Hours` | `testSubtractionCannotExceed0Hours()` | pending |
-| `testSubtractionToZero` | `testSubtractionToZero()` | pending |
+| `testAccessing` | `testAccessing()` | done |
+| `testAddition` | `testAddition()` | done |
+| `testAdditionCannotExceed24Hours` | `testAdditionCannotExceed24Hours()` | done |
+| `testAdditionOfLessThanOneHour` | `testAdditionOfLessThanOneHour()` | done |
+| `testComparing` | `testComparing()` | done |
+| `testISO8601Printing` | `testISO8601Printing()` | done |
+| `testInvalidCreation` | `testInvalidCreation()` | done |
+| `testParseISO8601` | `testParseISO8601()` | done |
+| `testPrintString` | `testPrintString()` | done |
+| `testSubtraction` | `testSubtraction()` | done |
+| `testSubtractionCannotExceed0Hours` | `testSubtractionCannotExceed0Hours()` | done |
+| `testSubtractionToZero` | `testSubtractionToZero()` | done |
 
 </details>
 
@@ -567,11 +567,11 @@ Status is `pending` until the owning unit lands; U5's checker keeps it honest.
 
 | SUnit selector | JUnit method | Status |
 | --- | --- | --- |
-| `testAsRelativePointInTime` | `testAsRelativePointInTime()` | pending |
-| `testCreationFromInstant` | `testCreationFromInstant()` | pending |
-| `testCreationFromInstantWithFixedOffset` | `testCreationFromInstantWithFixedOffset()` | pending |
-| `testIn` | `testIn()` | pending |
-| `testInCoordinatedUniversalTime` | `testInCoordinatedUniversalTime()` | pending |
+| `testAsRelativePointInTime` | `testAsRelativePointInTime()` | done |
+| `testCreationFromInstant` | `testCreationFromInstant()` | done |
+| `testCreationFromInstantWithFixedOffset` | `testCreationFromInstantWithFixedOffset()` | done |
+| `testIn` | `testIn()` | done |
+| `testInCoordinatedUniversalTime` | `testInCoordinatedUniversalTime()` | done |
 
 </details>
 
