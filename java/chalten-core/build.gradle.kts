@@ -14,3 +14,14 @@ tasks.named<ProcessResources>("processResources") {
         into("locales")
     }
 }
+
+// MigrationGuideTest checks java/MIGRATION.md against MigrationGuideExamplesTest and the public API.
+tasks.named<Test>("test") {
+    val migrationGuide = rootProject.layout.projectDirectory.file("MIGRATION.md")
+    inputs.file(migrationGuide).withPropertyName("migrationGuide").withPathSensitivity(PathSensitivity.RELATIVE)
+    systemProperty("chalten.migrationGuide", migrationGuide.asFile.path)
+    systemProperty(
+        "chalten.migrationGuideExamples",
+        layout.projectDirectory.file("src/test/java/org/chalten/core/MigrationGuideExamplesTest.java").asFile.path,
+    )
+}
