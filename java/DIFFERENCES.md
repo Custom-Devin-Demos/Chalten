@@ -30,3 +30,17 @@ listed is meant to behave identically; a difference found elsewhere is a bug.
 | C6 | Instant precision | `Instant` holds any quantity of microseconds. | Same (exact `TimeQuantity`); `toJavaInstant()`, `toLocalTime()` and `toOffsetDateTime()` truncate below the microsecond or second that `java.time` can hold. | `java.time` interop only; core arithmetic stays exact. |
 | C7 | Float offsets in messages | `FixedOffsetRuleset for: -16.1 * hour` fails with `-16.1 h is out of range...`. | The message reads `(-161/10) h is out of range...`. | Consequence of M1/M2: decimals are exact fractions. |
 | C8 | Localization hook | `NaturalLanguageTranslator` and `CurrentLocale` dynamic variables. | `org.chalten.localization.Translations` reads the shared `locales/` catalogs; `Translations.during(translator, action)` and `duringLanguage(language, action)` scope a translator. Locale-aware formatting is U4. | Thread-scoped equivalent of the Smalltalk dynamic variables. |
+
+## Calendars, timezones and localization (U4)
+
+| # | Topic | Smalltalk | Java | Why |
+| --- | --- | --- | --- | --- |
+| L1 | Style selectors | `localizedWith: [ :options \| options short ]`, `long`, `medium`, `full`. | `localized(FormatterOptions::shortStyle)`, `longStyle`, `mediumStyle`, `fullStyle`. | `short` and `long` are Java keywords. |
+| L2 | Formatter dispatch | Each object answers `printLocalizedOn:using:` (double dispatch). | `LocalizedChronologyFormatter.format(Object)` switches on the object's type; other objects throw `IllegalArgumentException`. | Keeps the formatter in one class; the public `localized()` methods behave the same. |
+| L3 | Pattern fields | `ChronologyPattern elements` holds symbols such as `#twoDigitDay`. | It holds `ChronologyPattern.Field` constants such as `TWO_DIGIT_DAY`, including `DATE` and `TIME` for `{1}` and `{0}`. | Java has no symbols. |
+| L4 | Missing conventions | `ObjectNotFound` (`There's no <name> convention for <tag>`). | `NoSuchElementException` with the same message. | Java exception idiom. |
+| L5 | Formatter constructors | `LocalizedChronologyFormatter for:`, `for:configuredBy:`, `for:in:configuredBy:`. | `forLanguage(tag)`, `forLanguage(tag, configurer)`, `forLanguage(tag, conventions, configurer)`. | `for` is a Java keyword. |
+| L6 | Cross-calendar comparisons | Comparing a Hebrew or Islamic date with a Gregorian one raises `ArithmeticError` at run time. | It does not compile; the years still throw `ArithmeticException` (`Years in different time scales are incommensurable`). | Generic `Comparable` types. |
+| L7 | Missing month selectors | `shawwal thirtieth`, `(duAlHijjah , 1443) thirtieth` and `cheshvan thirtieth` raise `MessageNotUnderstood`. | They throw `UnsupportedOperationException`. | Same as C2. |
+| L8 | Ambiguous and skipped times | `AmbiguousTimeError` and `SkippedTimeError` are resumable: a handler can `resume:` with a chosen date-time. | `AmbiguousTimeException` and `SkippedTimeException` are unchecked exceptions; `TimeResolutionStrategy` (`strict`, `earlier`, `later`) picks the result instead of resuming. | Java exceptions cannot be resumed. |
+| L9 | `java.time` interop of timezones | None. | `TimeZoneRuleset.toZoneId()`, `IANATimeZoneDatabase.at(ZoneId)`, `toZonedDateTime(...)`. The rules always come from the TZif files, never from the JDK's own tzdb. | Additive interop; the JDK and OS tzdata releases can differ. |

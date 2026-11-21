@@ -1,0 +1,50 @@
+name: Java timezones
+
+on:
+  push:
+    paths:
+      - 'java/**'
+      - '.github/workflows/java-timezones.yml'
+  pull_request:
+    paths:
+      - 'java/**'
+      - '.github/workflows/java-timezones.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: java-timezones-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: true
+
+jobs:
+  timezones:
+    name: chalten-timezones against the system tzdata (Java 21)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: java
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install tzdata
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tzdata
+          test -f /usr/share/zoneinfo/zone1970.tab
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@v5
+      - name: Test chalten-timezones
+        env:
+          TZDIR: /usr/share/zoneinfo
+        run: ./gradlew :chalten-timezones:test --stacktrace
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: timezones-test-reports
+          path: java/chalten-timezones/build/reports/tests/
+          if-no-files-found: ignore
