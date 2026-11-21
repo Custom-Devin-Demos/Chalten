@@ -7,13 +7,13 @@ This guide is for teams moving code that calls Chalten (Smalltalk) to the Java 2
 2. [Policy-period recipes](#policy-period-recipes): term start/end, renewals and pro-rata day counts, in Smalltalk and Java side by side.
 3. Reference sections: [java.time interop](#javatime-interop), [threading and locale context](#threading-and-locale-context), [exceptions](#exceptions) and [behaviour differences](#behaviour-differences).
 
-Every Java snippet in this guide is copied from [`MigrationGuideExamplesTest`](chalten-core/src/test/java/org/chalten/core/MigrationGuideExamplesTest.java), which asserts the values shown. [`MigrationGuideTest`](chalten-core/src/test/java/org/chalten/core/MigrationGuideTest.java) fails the build if a snippet line is not in that test, or if a Java type or member named in the API mapping table does not exist (rows marked **U4** are skipped until U4 lands).
+Every Java snippet in this guide is copied from [`MigrationGuideExamplesTest`](chalten-core/src/test/java/org/chalten/core/MigrationGuideExamplesTest.java), which asserts the values shown. [`MigrationGuideTest`](chalten-core/src/test/java/org/chalten/core/MigrationGuideTest.java) fails the build if a snippet line is not in that test, or if a Java type or member named in the API mapping table does not exist (rows marked **U4** name types in the timezones, Hebrew and Islamic modules, which `chalten-core` cannot load, so they are not checked by this test).
 
 Conventions used in the Smalltalk snippets: `day`, `month`, `year` and `hour` are the Aconcagua units `TimeUnits units >> #day` etc., as returned by `CalendarMagnitude class >> month`. Java imports come from `org.chalten.core`, `org.chalten.measure` and `org.chalten.localization`.
 
 ## API mapping
 
-Selectors and their Java names. `Type#member` is an instance method, `Type.member` a static method, constant or enum value. Interfaces carry the shared protocol as default methods (`CalendarDate`, `CalendarMonthOfYear`, `CalendarYear`, `CalendarMagnitude`), so `GregorianDate#next` is declared in `CalendarDate`. The **Unit** column says which Java port unit provides the API; U2 and U3 are merged into this branch, U4 APIs are listed from [PLAN.md §4](PLAN.md#4-class-mapping) and are provided by U4.
+Selectors and their Java names. `Type#member` is an instance method, `Type.member` a static method, constant or enum value. Interfaces carry the shared protocol as default methods (`CalendarDate`, `CalendarMonthOfYear`, `CalendarYear`, `CalendarMagnitude`), so `GregorianDate#next` is declared in `CalendarDate`. The **Unit** column says which Java port unit provides the API; U2, U3 and U4 are merged into this branch.
 
 | Area | Smalltalk | Java | Unit |
 | --- | --- | --- | --- |
@@ -54,21 +54,21 @@ Selectors and their Java names. `Type#member` is an instance method, `Type.membe
 | Intervals | `at: 1` (one-based), `indexOf:` | `DiscreteInterval#get` (zero-based), `DiscreteInterval#indexOf` | U3 |
 | Parsing | `ISO8601Parser new parseDate:`, `parseDateTime:`, `parseTimeOfDay:`, `parseMonthOfYear:`, `parseYear:`, `parseDuration:` | `ISO8601Parser#parseDate`, `ISO8601Parser#parseDateTime`, `ISO8601Parser#parseTimeOfDay`, `ISO8601Parser#parseMonthOfYear`, `ISO8601Parser#parseYear`, `ISO8601Parser#parseDuration` | U2 |
 | Formatting | `printString`, `printAsISO8601String`, `ISO8601DurationFormatter new format:` | `Object#toString`, `ISO8601Printable#printAsISO8601String`, `ISO8601DurationFormatter#format` | U2, U3 |
-| Formatting | `localized`, `localizedWith:`, `LocalizedChronologyFormatter for: aLocale`, `ChronologyPattern` | `LocalizedChronologyFormatter`, `FormatterOptions`, `ChronologyPattern` | U4 (provided by U4) |
+| Formatting | `localized`, `localizedWith:`, `LocalizedChronologyFormatter for: aLocale`, `ChronologyPattern` | `LocalizedChronologyFormatter`, `FormatterOptions`, `ChronologyPattern` | U4 |
 | Exceptions | `InstanceCreationFailed` | `InstanceCreationFailedException` | U3 |
 | Exceptions | `ArithmeticError` | `ArithmeticException` | U2, U3 |
 | Exceptions | `MessageNotUnderstood` for an ordinal a month lacks (`april thirtyFirst`) | `UnsupportedOperationException` | U2 |
 | Exceptions | `AssertionFailed` | `ChaltenAssertionException` | U3 |
 | Exceptions | `SubscriptOutOfBounds`, `KeyNotFound` | `IndexOutOfBoundsException`, `IllegalArgumentException` | U3 |
-| Exceptions | `AmbiguousTimeError`, `SkippedTimeError` | `AmbiguousTimeException`, `SkippedTimeException` | U4 (provided by U4) |
+| Exceptions | `AmbiguousTimeError`, `SkippedTimeError` | `AmbiguousTimeException`, `SkippedTimeException` | U4 |
 | Timezones | `FixedOffsetRuleset for: -5 * hour`, `identifier`, `offsetToUniversalCoordinatedTimeAt: anInstant` | `FixedOffsetRuleset.of`, `FixedOffsetRuleset#identifier`, `FixedOffsetRuleset#offsetToUniversalCoordinatedTimeAt`, `TimeOffsetRuleset` | U2 |
 | Timezones | `aDateTime in: aRuleset`, `inCoordinatedUniversalTime`, `asInstant` | `GregorianDateTime#in`, `GregorianDateTime#inCoordinatedUniversalTime`, `TimeOffsetAwareGregorianDateTime#asInstant`, `TimeOffsetAwareGregorianDateTime#appliedOffset` | U2 |
 | Timezones | `anInstant asGregorianDateTimeIn: aRuleset`, `asGregorianDateTimeInCoordinatedUniversalTime` | `Instant#asGregorianDateTimeIn`, `Instant#asGregorianDateTimeInCoordinatedUniversalTime` | U2 |
-| Timezones | `TimeZoneRuleset`, `IANATimeZoneDatabase`, `IANATimeZoneDatabaseParser` | `TimeZoneRuleset`, `IANATimeZoneDatabase`, `IANATimeZoneDatabaseParser` | U4 (provided by U4) |
+| Timezones | `TimeZoneRuleset`, `IANATimeZoneDatabase`, `IANATimeZoneDatabaseParser` | `TimeZoneRuleset`, `IANATimeZoneDatabase`, `IANATimeZoneDatabaseParser` | U4 |
 | Localization | `'text' localized`, `NaturalLanguageTranslator` scope (`asNaturalLanguageTranslatorDuring:`) | `Translations.localized`, `Translations.during`, `Translations.duringLanguage`, `Translations.setDefaultLanguage` | U2 |
-| Localization | `CurrentLocale use: 'es' during: [...]`, `LocaleConventions current` | `CurrentLocale`, `LocaleConventions` | U4 (provided by U4) |
-| Calendars | `HebrewCalendar`, `HebrewYear`, `HebrewMonth`, `HebrewMonthOfYear`, `HebrewDate`, `HebrewDateTime`, `HebrewDayOfWeek` | same names in `org.chalten.hebrew` | U4 (provided by U4) |
-| Calendars | `IslamicCalendar`, `IslamicYear`, `IslamicMonth`, `IslamicMonthOfYear`, `IslamicDate`, `IslamicDateTime`, `IslamicDayOfWeek` | same names in `org.chalten.islamic` | U4 (provided by U4) |
+| Localization | `CurrentLocale use: 'es' during: [...]`, `LocaleConventions current` | `CurrentLocale`, `LocaleConventions` | U4 |
+| Calendars | `HebrewCalendar`, `HebrewYear`, `HebrewMonth`, `HebrewMonthOfYear`, `HebrewDate`, `HebrewDateTime`, `HebrewDayOfWeek` | same names in `org.chalten.hebrew` | U4 |
+| Calendars | `IslamicCalendar`, `IslamicYear`, `IslamicMonth`, `IslamicMonthOfYear`, `IslamicDate`, `IslamicDateTime`, `IslamicDayOfWeek` | same names in `org.chalten.islamic` | U4 |
 | java.time | none (Java only) | `GregorianDate#toLocalDate`, `GregorianDate.from`, `GregorianMonthOfYear#toYearMonth`, `GregorianYear#toYear`, `GregorianMonth#toMonth`, `DayOfWeek#toDayOfWeek` | U2 |
 | java.time | none (Java only) | `TimeOfDay#toLocalTime`, `GregorianDateTime#toLocalDateTime`, `TimeOffsetAwareGregorianDateTime#toOffsetDateTime`, `Instant#toJavaInstant`, `FixedOffsetRuleset#toZoneOffset`, `TimeQuantity#toPeriod`, `TimeQuantity#toDuration` | U2, U3 |
 
@@ -524,7 +524,7 @@ assertEquals(53, coveredDays.select(d -> d.dayOfWeek() == DayOfWeek.SATURDAY).si
 
 ### Effective time at a fixed offset
 
-Policies that take effect at 12:01 a.m. local time map to an absolute instant through a time-offset ruleset. A fixed offset ignores daylight saving; IANA zones (`TimeZoneRuleset`) are provided by U4.
+Policies that take effect at 12:01 a.m. local time map to an absolute instant through a time-offset ruleset. A fixed offset ignores daylight saving; IANA zones use `TimeZoneRuleset` from `chalten-timezones`.
 
 <table>
 <tr><th>Smalltalk</th><th>Java</th></tr>
@@ -621,7 +621,7 @@ Do not do policy arithmetic in `java.time` and then convert back: `java.time` us
 - **`ISO8601Parser` and `ISO8601DurationFormatter`** keep no state between calls; one instance per call, as in the examples, is the simplest rule.
 - **Localization is thread-scoped.** Smalltalk scopes translations with dynamic variables (`asNaturalLanguageTranslatorDuring:`, `CurrentLocale use:during:`). Java scopes them per thread with `Translations.during(translator, action)` and `Translations.duringLanguage(language, action)`; the previous translator is restored when the action ends, even on an exception. The scope is an `InheritableThreadLocal`: threads created inside the scope inherit it, but pooled executor threads do not, so re-establish the scope inside tasks submitted to an executor.
 - **Defaults are global.** `Translations.setDefaultLanguage` and `setDefaultTranslator` change every thread without a scope. Call them once at start-up only.
-- Month and day names (`fullName()`, `shortName()`) and exception messages are translated. Locale-aware date formatting (`CurrentLocale`, `LocalizedChronologyFormatter`) is provided by U4.
+- Month and day names (`fullName()`, `shortName()`) and exception messages are translated. Locale-aware date formatting uses `CurrentLocale` and `LocalizedChronologyFormatter` in `org.chalten.localization`.
 
 <table>
 <tr><th>Smalltalk</th><th>Java</th></tr>
